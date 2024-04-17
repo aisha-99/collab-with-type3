@@ -6,7 +6,6 @@ body, html {
 
 h1, h2, h3, button {
     font-family: "Baloo 2", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     color: #662E9B;
@@ -14,7 +13,6 @@ h1, h2, h3, button {
 
 p, nav {
     font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
@@ -100,8 +98,8 @@ nav {
 
 #menu-toggle {
   display: none;
-  background-color: var(black);
-  color: var(white);
+  background-color: black;
+  color: white;
   border: none;
 }
 
