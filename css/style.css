@@ -160,11 +160,11 @@ nav {
     margin-left: 50px;
 }
 
-.image {
+.image, #productImage {
     flex: 1;
 }
 
-.image img {
+.image img, #productImage img {
     max-width: 100%;
     height: auto;
 }
@@ -242,12 +242,7 @@ footer p {
 }
 
 #productImage {
-  flex: 1;
-}
-
-#productImage img {
-  max-width: 100%;
-  height: auto;
+  padding-right: 40px;
 }
 
 .product-details {
@@ -411,6 +406,10 @@ footer p {
   .product-box {
     width: auto; 
     margin: 0;
+  }
+
+  #productImage {
+    padding-right: 0;
   }
 }
 

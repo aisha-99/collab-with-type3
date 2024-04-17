@@ -4,8 +4,6 @@ var client = contentful.createClient({
     accessToken: 'SjUQZDO7xSYc2IeDzAWqx5j0WuwEjMLPCPvt6QCeils'
   });
   
-  var productSection = document.querySelector('.more-products-section.home');
-  
   client.getEntries({
     content_type: 'assignment3'
   }).then(function (entries) {
@@ -18,29 +16,37 @@ var client = contentful.createClient({
       var productBox = document.createElement('div');
       productBox.classList.add('product-box');
   
+      /*Product Image*/
       var productImageElem = document.createElement('img');
       productImageElem.src = productImage;
       productImageElem.alt = productName;
   
+      /*Product Page Link*/
+      var productLink = document.createElement('a');
+      productLink.href = 'product.html?id=' + entry.sys.id; 
+      productLink.appendChild(productImageElem); 
+  
       var productInfo = document.createElement('div');
       productInfo.classList.add('product-info');
   
+      /*Product Name*/
       var productNameElem = document.createElement('h3');
       productNameElem.textContent = productName;
   
+      /*Product Price*/
       var productPriceElem = document.createElement('p');
       productPriceElem.textContent = '$' + productPrice;
   
       productInfo.appendChild(productNameElem);
       productInfo.appendChild(productPriceElem);
   
-      productBox.appendChild(productImageElem);
+      productBox.appendChild(productLink); 
       productBox.appendChild(productInfo);
   
-      productSection.querySelector('.product-row').appendChild(productBox);
+      document.querySelector('.product-row').appendChild(productBox);
     });
   }).catch(function (error) {
     console.log("Error fetching data:", error);
   });
-
+  
   
