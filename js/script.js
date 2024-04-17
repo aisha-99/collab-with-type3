@@ -10,7 +10,7 @@ var client = contentful.createClient({
 });
 
 var productSection = document.querySelector('.product-section');
-var productImage = productSection.querySelector('#productImage'); // Changed from '.product-image' to '#productImage'
+var productImage = productSection.querySelector('#productImage'); 
 var productDetails = productSection.querySelector('.product-details');
 
 client.getEntry(productId).then(function (entry) {
@@ -25,7 +25,7 @@ client.getEntry(productId).then(function (entry) {
     console.log(entry.fields.productImage.fields.file.url);
     var productImage = document.createElement('img');
     image.src = entry.fields.productImage.fields.file.url;
-    productImage.appendChild(image); // Changed from productImage.appendChild(image); to productImage.appendChild(image);
+    productImage.appendChild(image); 
 
     // Cost
     var cost = document.createElement('p');
